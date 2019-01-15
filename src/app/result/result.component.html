@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col" align="center">
+      <h4>Results: </h4>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-info">
+      <thead>
+      <tr>
+        <th scope="col">1st gear</th>
+        <th scope="col">2nd gear</th>
+        <th scope="col">3rd gear</th>
+        <th scope="col">4th gear</th>
+        <th scope="col">5th gear</th>
+        <th scope="col">6th gear</th>
+        <th scope="col">Reverse</th>
+      </tr>
+      </thead>
+      <tbody>
+      <td>{{result.firstGear}} km/h</td>
+      <td>{{result.secondGear}} km/h</td>
+      <td>{{result.thirdGear}} km/h</td>
+      <td>{{result.fourthGear}} km/h</td>
+      <td>{{result.fifthGear}} km/h</td>
+      <td *ngIf="result.sixthGear != 0; else noSixthGear">{{result.sixthGear}} km/h</td>
+      <ng-template #noSixthGear><td>N/A</td></ng-template>
+      <td>{{result.reverse}} km/h</td>
+      </tbody>
+    </table>
+  </div>
+</div>
