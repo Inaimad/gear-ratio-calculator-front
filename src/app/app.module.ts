@@ -7,6 +7,8 @@ import { AutomaticComponent } from './automatic/automatic.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ResultComponent } from './result/result.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {WheelService} from './service/wheel.service';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [WheelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,9 +16,7 @@
     <div class="col" align="center">
       <h4>Choose wheel size: </h4> <br>
       <select class="form-control" id="wheelSize">
-        <option>255/45/18</option>
-        <option>225/35/17</option>
-        <option>225/30/18</option>
+        <option value="wheel" *ngFor="let wheel of allWheels">{{wheel.width}}/{{wheel.profile}}/{{wheel.diameterInInches}}</option>
       </select>
     </div>
   </div>
