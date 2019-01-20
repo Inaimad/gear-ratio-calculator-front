@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Wheel} from '../Model/Wheel';
 import {WheelService} from '../service/wheel.service';
+import {Car} from '../Model/Car';
+import {CarService} from '../service/car.service';
 
 @Component({
   selector: 'app-automatic',
@@ -9,16 +10,16 @@ import {WheelService} from '../service/wheel.service';
 })
 export class AutomaticComponent implements OnInit {
 
-  allWheels: Wheel[] = [];
+  allCars: Car[] = [];
 
-  constructor(private wheelService: WheelService) { }
+  constructor(private wheelService: WheelService, private carService: CarService) { }
 
   ngOnInit() {
-    this.populateWheels();
+    this.populateCars();
   }
 
-  populateWheels(): void {
-    this.wheelService.getAllWheels().subscribe((wheels: any[]) => this.allWheels = wheels, (error) => console.log(error));
+  populateCars(): void {
+    this.carService.getAllCars().subscribe((cars: any[]) => this.allCars = cars, (error) => console.log(error));
   }
 
 }
