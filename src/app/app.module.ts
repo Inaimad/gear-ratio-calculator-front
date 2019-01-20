@@ -9,6 +9,8 @@ import { ResultComponent } from './result/result.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {WheelService} from './service/wheel.service';
 import {HttpModule} from '@angular/http';
+import {ResultService} from './service/result.service';
+import {CarService} from './service/car.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import {HttpModule} from '@angular/http';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [WheelService],
+  providers: [WheelService, ResultService, CarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

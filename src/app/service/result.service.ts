@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Result } from '../Model/Result';
-import {MOCKED_RESULT} from '../Mocks/mocked-result';
-import {Observable, of} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {Http, Response} from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResultService {
 
-  result: Result;
+  constructor(private http: Http) { }
 
-  constructor() { }
-
-  getResult() {
-    return of(MOCKED_RESULT);
+  getResultByCarId(carId: number) {
+    return this.http.get('http://localhost:8080/api/car/calculateSpeed/carId?carId=' + carId).pipe(map(
+      (response: Response) => {
+        const data = response.json();
+        console.log('Calculation received from Back End \n' + response);
+        return data;
+      }
+    ));
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {WheelService} from '../service/wheel.service';
 import {Car} from '../Model/Car';
 import {CarService} from '../service/car.service';
+import {ResultService} from '../service/result.service';
 
 @Component({
   selector: 'app-automatic',
@@ -12,7 +13,7 @@ export class AutomaticComponent implements OnInit {
 
   allCars: Car[] = [];
 
-  constructor(private wheelService: WheelService, private carService: CarService) { }
+  constructor(private wheelService: WheelService, private carService: CarService, private resultService: ResultService) { }
 
   ngOnInit() {
     this.populateCars();
